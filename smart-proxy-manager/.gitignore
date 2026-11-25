@@ -1,0 +1,27 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+build/
+dist/
+*.egg-info/
+
+# 本地数据与生成物（只保留占位文件）
+data/*
+!data/.gitkeep
+output/*
+!output/.gitkeep
+*.db
+*.db-journal
+
+# 真实配置（含订阅地址等敏感信息，禁止提交；仓库只保留 config.example.toml）
+config.toml
+
+# 阶段 0 调研镜像：上游项目源码的局部副本，仅作本地参考，不纳入本项目仓库
+research/
+
+# 日志与其他
+*.log
+.DS_Store
+Thumbs.db

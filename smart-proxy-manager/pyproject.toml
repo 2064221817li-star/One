@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-proxy-manager"
+version = "0.1.0"
+description = "个人自用的 Windows 智能代理节点管理工具（与 Clash Verge Rev / Mihomo 配合）"
+readme = "README.md"
+# 目标环境固定 Python 3.13（用户 Windows 已安装 3.13 并设为 py 启动器默认）
+requires-python = ">=3.13,<3.14"
+license = "LicenseRef-Private-Personal-Use"
+dependencies = [
+    # 版本与许可证已在阶段 0 可行性报告第 6 节核实
+    "PyYAML==6.0.3",   # MIT
+    "httpx==0.28.1",   # BSD-3-Clause
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+]
+
+[project.scripts]
+spm = "smart_proxy_manager.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
